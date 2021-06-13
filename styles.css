@@ -159,6 +159,7 @@ input[type="radio"]{
   margin: 0px 50px;
   font-weight: bold;
   text-align: center;
+  font-size: 1.3em;
 }
 
 #game_mode, #theme, #name1, #name2, #mark, #turn
@@ -167,6 +168,7 @@ input[type="radio"]{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 button
@@ -177,6 +179,7 @@ button
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  height: 50px;
 }
 
 button:hover {
