@@ -39,6 +39,11 @@ body::before {
   background: url(./bg.jpg) no-repeat center center/cover;
 }
 
+#logo
+{
+  width: 75vw;
+}
+
 .name:focus, .name
 {
   border: none;
@@ -162,7 +167,7 @@ input[type="radio"]{
   font-size: 1.3em;
 }
 
-#game_mode, #theme, #name1, #name2, #mark, #turn
+#game_mode, #theme, .names, #name2, #mark, #turn
 {
   width: 100%;
   display: flex;
@@ -179,7 +184,8 @@ button
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  height: 50px;
+  font-size: 25px;
+  height: 40px;
 }
 
 button:hover {
@@ -188,7 +194,6 @@ button:hover {
 }
 
 #home {
-  /* display: flex; */
   left: 10vw;
   position: relative;
   height: 100vh;
