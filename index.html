@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="./favicon.jpeg" type="image/x-icon" />
+  </head>
+  <body>
+    <section id="start">
+      <h1>Tic - Tac - Toe</h1>
+      <div id="game_mode">
+        <span class="legends"><h4>Game mode:</h4></span>
+        <div class="wrapper">
+          <input type="radio" name="mode" id="single" checked value="single">
+          <input type="radio" name="mode" id="multi" value="multi">
+            <label for="single" class="option option-1">
+              <div class="dot"></div>
+               <span><strong>Single Player</strong></span>
+               </label>
+            <label for="multi" class="option option-2">
+              <div class="dot"></div>
+               <span><strong>Multiplayer</strong></span>
+            </label>
+         </div>
+      </div>
+      <div id="theme">
+        <span class="legends"><h4>Theme:</h4></span>
+        <div class="wrapper">
+          <input type="radio" name="theme" id="classic" checked value="classic">
+          <input type="radio" name="theme" id="Lawrencium" value="Lawrencium">
+            <label for="classic" class="option option-1">
+              <div class="dot"></div>
+               <span><strong>Classic</strong></span>
+               </label>
+            <label for="Lawrencium" class="option option-2">
+              <div class="dot"></div>
+               <span><strong>Lawrencium</strong></span>
+            </label>
+         </div>
+      </div>
+      <div id="name1">
+        <span class="legends"><h4>Player's Name:</h4></span>
+        <input type="text" class="name" id="player1_name" required placeholder="Don't Use Doge :)"/>
+      </div>
+      <div id="name2" class="hide">
+        <span class="legends"><h4>Player 2's Name:</h4></span>
+        <input type="text" class="name" id="player2_name" required placeholder="Don't Use Player 1's Name :)"/>
+      </div>
+        <div id="mark">
+        <span class="legends"><h4>Player's Mark:</h4></span>
+        <div class="wrapper">
+          <input type="radio" name="mark" id="x" checked value="x">
+          <input type="radio" name="mark" id="o" value="o">
+            <label for="x" class="option option-1">
+              <div class="dot"></div>
+               <span><strong>X</strong></span>
+               </label>
+            <label for="o" class="option option-2">
+              <div class="dot"></div>
+             <span><strong>O</strong></span>
+            </label>
+         </div>
+      </div>
+      <div id="turn">
+        <span class="legends"><h4>First Turn:</h4></span>
+        <div class="wrapper">
+          <input type="radio" name="turn" id="player1" checked value="player1">
+          <input type="radio" name="turn" id="player2" value="player2">
+            <label for="player1" class="option option-1">
+              <div class="dot"></div>
+               <span><strong>Player 1</strong></span>
+               </label>
+            <label for="player2" class="option option-2">
+              <div class="dot"></div>
+             <span><strong>Computer</strong></span>
+            </label>
+         </div>
+      </div>
+      <button id="Start_button">Start</button>
+    </section>
+
+    <section id="end" class="hide">
+      <div class="winning-message" id="winningMessage">
+        <div data-winning-message-text>Player 1 Wins!!</div>
+        <button id="restartButton">Restart</button>
+      </div>
+    </section>
+
+    <section id="home" class="hide">
+      <div id="board">
+        <div class="row" id="row1">
+          <div class="cells" id="cell1"></div>
+          <div class="cells" id="cell2"></div>
+          <div class="cells" id="cell3"></div>
+        </div>
+        <div class="row" id="row2">
+          <div class="cells" id="cell4"></div>
+          <div class="cells" id="cell5"></div>
+          <div class="cells" id="cell6"></div>
+        </div>
+        <div class="row" id="row3">
+          <div class="cells" id="cell7"></div>
+          <div class="cells" id="cell8"></div>
+          <div class="cells" id="cell9"></div>
+        </div>
+      </div>
+      <div class="players" id="player1">
+        <div class="profiles" id="profile1"></div>
+        <p class="names" id="name1">Player1</p>
+      </div>
+      <div class="players" id="player2">
+        <div class="profiles" id="profile2"></div>
+        <p class="names" id="name2">Player2</p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
