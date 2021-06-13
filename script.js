@@ -276,9 +276,9 @@ function handleClick(e) {
 
 function endGame(draw) {
   if (draw) {
-    winningMessageTextElement.innerText = "Draw!";
+    winningMessageTextElement.innerText = "Uh! It is a Draw!!";
   } else {
-    winningMessageTextElement.innerText = `${cur_turn===1 ? "Player 1" : ((singleMode) ? "Computer" : "Player 2")} Wins!`;
+    winningMessageTextElement.innerText = `${cur_turn===1 ? player1Name : player2Name} Wins!`;
   }
   Windows[1].classList.remove("hide");
   Windows[2].classList.add("hide");
