@@ -39,7 +39,7 @@ body::before {
   background: url(./bg.jpg) no-repeat center center/cover;
 }
 
-#logo
+.logo
 {
   width: 75vw;
 }
@@ -194,14 +194,18 @@ button:hover {
 }
 
 #home {
-  left: 10vw;
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   height: 100vh;
-  width: 80vw;
+  width: 100vw;
 }
 
 
-@media only screen and (max-height: 415px) {
+/* @media only screen and (max-height: 415px) {
     .players
     {
         height: 125px;
@@ -232,27 +236,23 @@ button:hover {
     bottom: 15px;
     right: calc((75vw - 300px) / 6);
   }
-}
+} */
 
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
 }
+
 
 #board {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
   width: 300px;
-  position: relative;
-  margin: auto;
-  top: calc((100% - 300px) * 0.5);
 }
 
 .cells {
-  position: relative;
-  border: 1px solid white;
+  border: 2px solid white;
   width: 100px;
   height: 100px;
   background-color: rgba(255, 255, 255, 0.08);
@@ -331,11 +331,21 @@ button:hover {
   border-right: none;
 }
 
+#container
+{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
 .players {
   border: 2px solid white;
   color: white;
   text-align: center;
-  position: absolute;
+  height: 150px;
+  width: 150px;
 }
 
 #end

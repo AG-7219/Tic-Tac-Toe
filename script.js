@@ -8,9 +8,7 @@ const Windows = document.getElementsByTagName("section");
 const cellElements = document.querySelectorAll(".cells");
 const board = document.getElementById("board");
 const winningMessageElement = document.getElementById("winningMessage");
-const winningMessageTextElement = document.querySelector(
-  "[data-winning-message-text]"
-);
+const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
 
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";

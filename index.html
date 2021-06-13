@@ -11,8 +11,8 @@
     <link rel="shortcut icon" href="./favicon.jpeg" type="image/x-icon" />
   </head>
   <body>
-    <section id="start">
-      <img src="./logo.png" alt="Tic-Tac-Toe" id="logo">
+    <section id="start" class="hide">
+      <img src="./logo.png" alt="Tic-Tac-Toe" class="logo">
       <div id="game_mode">
         <span class="legends"><h4>Game mode:</h4></span>
         <div class="wrapper">
@@ -69,8 +69,8 @@
       <div id="turn">
         <span class="legends"><h4>First Turn:</h4></span>
         <div class="wrapper">
-          <input type="radio" name="turn" id="player1" checked value="player1">
-          <input type="radio" name="turn" id="player2" value="player2">
+          <input type="radio" name="turn" checked value="player1">
+          <input type="radio" name="turn" value="player2">
             <label for="player1" class="option option-1">
               <div class="dot"></div>
                <span><strong>Player 1</strong></span>
@@ -91,7 +91,10 @@
       </div>
     </section>
 
-    <section id="home" class="hide">
+    <section id="home">
+      <div id="banner">
+        <img src="./logo.png" alt="Tic-Tac-Toe" class="logo">
+      </div>
       <div id="board">
         <div class="row" id="row1">
           <div class="cells" id="cell1"></div>
@@ -109,13 +112,15 @@
           <div class="cells" id="cell9"></div>
         </div>
       </div>
-      <div class="players" id="player1">
-        <div class="profiles" id="profile1"></div>
-        <p class="names" id="name1">Player1</p>
-      </div>
-      <div class="players" id="player2">
-        <div class="profiles" id="profile2"></div>
-        <p class="names" id="name2">Doge</p>
+      <div id="container">
+        <div class="players" id="player1">
+          <div class="profiles" id="profile1"></div>
+          <p class="names" id="name1">Player1</p>
+        </div>
+        <div class="players" id="player2">
+          <div class="profiles" id="profile2"></div>
+          <p class="names" id="name2">Doge</p>
+        </div>
       </div>
     </section>
 
