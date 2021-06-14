@@ -6,80 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="./favicon.jpeg" type="image/x-icon" />
   </head>
   <body>
     <section id="start">
-      <img src="./logo.png" alt="Tic-Tac-Toe" class="logo">
+      <img src="./logo.png" alt="Tic-Tac-Toe" class="logo" />
       <div id="game_mode">
         <span class="legends"><h4>Game mode:</h4></span>
         <div class="wrapper">
-          <input type="radio" name="mode" id="single" checked value="single">
-          <input type="radio" name="mode" id="multi" value="multi">
-            <label for="single" class="option option-1">
-              <div class="dot"></div>
-               <span><strong>Computer</strong></span>
-               </label>
-            <label for="multi" class="option option-2">
-              <div class="dot"></div>
-               <span><strong>Multiplayer</strong></span>
-            </label>
-         </div>
+          <input type="radio" name="mode" id="single" checked value="single" />
+          <input type="radio" name="mode" id="multi" value="multi" />
+          <label for="single" class="option option-1">
+            <div class="dot"></div>
+            <span><strong>Computer</strong></span>
+          </label>
+          <label for="multi" class="option option-2">
+            <div class="dot"></div>
+            <span><strong>Multiplayer</strong></span>
+          </label>
+        </div>
       </div>
       <div id="theme">
         <span class="legends"><h4>Theme:</h4></span>
         <div class="wrapper">
-          <input type="radio" name="theme" id="classic" checked value="classic">
-          <input type="radio" name="theme" id="Lawrencium" value="Lawrencium">
-            <label for="classic" class="option option-1">
-              <div class="dot"></div>
-               <span><strong>Classic</strong></span>
-               </label>
-            <label for="Lawrencium" class="option option-2">
-              <div class="dot"></div>
-               <span><strong>Lawrencium</strong></span>
-            </label>
-         </div>
+          <input
+            type="radio"
+            name="theme"
+            id="classic"
+            checked
+            value="classic"
+          />
+          <input type="radio" name="theme" id="Lawrencium" value="Lawrencium" />
+          <label for="classic" class="option option-1">
+            <div class="dot"></div>
+            <span><strong>Classic</strong></span>
+          </label>
+          <label for="Lawrencium" class="option option-2">
+            <div class="dot"></div>
+            <span><strong>Lawrencium</strong></span>
+          </label>
+        </div>
       </div>
       <div class="names">
         <span class="legends"><h4>Player's Name:</h4></span>
-        <input type="text" class="name" id="player1_name" required placeholder="Don't Use Doge :)"/>
+        <input
+          type="text"
+          class="name"
+          id="player1_name"
+          required
+          placeholder="Don't Use Doge :)"
+        />
       </div>
       <div class="names hide">
         <span class="legends"><h4>Player 2's Name:</h4></span>
-        <input type="text" class="name" id="player2_name" required placeholder="Don't Use Player 1's Name :)"/>
+        <input
+          type="text"
+          class="name"
+          id="player2_name"
+          required
+          placeholder="Don't Use Player 1's Name :)"
+        />
       </div>
-        <div id="mark">
+      <div id="mark">
         <span class="legends"><h4>Player's Mark:</h4></span>
         <div class="wrapper">
-          <input type="radio" name="mark" id="x" checked value="x">
-          <input type="radio" name="mark" id="o" value="o">
-            <label for="x" class="option option-1">
-              <div class="dot"></div>
-               <span><strong>X</strong></span>
-               </label>
-            <label for="o" class="option option-2">
-              <div class="dot"></div>
-             <span><strong>O</strong></span>
-            </label>
-         </div>
+          <input type="radio" name="mark" id="x" checked value="x" />
+          <input type="radio" name="mark" id="o" value="o" />
+          <label for="x" class="option option-1">
+            <div class="dot"></div>
+            <span><strong>X</strong></span>
+          </label>
+          <label for="o" class="option option-2">
+            <div class="dot"></div>
+            <span><strong>O</strong></span>
+          </label>
+        </div>
       </div>
       <div id="turn">
         <span class="legends"><h4>First Turn:</h4></span>
         <div class="wrapper">
-          <input type="radio" name="turn"  id="player1" checked value="player1">
-          <input type="radio" name="turn"  id="player2" value="player2">
-            <label for="player1" class="option option-1">
-              <div class="dot"></div>
-               <span><strong>Player 1</strong></span>
-               </label>
-            <label for="player2" class="option option-2">
-              <div class="dot"></div>
-             <span><strong>Computer</strong></span>
-            </label>
-         </div>
+          <input type="radio" name="turn" id="player1" checked value="player1"/>
+          <input type="radio" name="turn" id="player2" value="player2" />
+          <label for="player1" class="option option-1">
+            <div class="dot"></div>
+            <span><strong>Player 1</strong></span>
+          </label>
+          <label for="player2" class="option option-2">
+            <div class="dot"></div>
+            <span><strong>Computer</strong></span>
+          </label>
+        </div>
       </div>
       <button id="Start_button">Start</button>
     </section>
@@ -92,9 +113,7 @@
     </section>
 
     <section id="home" class="hide">
-      <div id="banner">
-        <img src="./logo.png" alt="Tic-Tac-Toe" class="logo">
-      </div>
+      <img src="./logo.png" alt="Tic-Tac-Toe" class="logo">
       <div id="board">
         <div class="row" id="row1">
           <div class="cells" id="cell1"></div>

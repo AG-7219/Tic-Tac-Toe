@@ -126,8 +126,7 @@ function isMovesLeft(b)
                       
                      b[i][j] = player2;
    
-                     best = Math.max(best, minimax(b,
-                                     depth + 1, !isMax));
+                     best = Math.max(best, minimax(b, depth + 1, !isMax));
    
                      b[i][j] = '_';
                  }
@@ -339,9 +338,8 @@ radios[1].addEventListener("click", () => {
 
 startButton.addEventListener("click", () => {
   singleMode = radios[0].checked;
-  if (radios[2].checked)
-    document.querySelector("body").classList.remove("Lawrencium");
-  else document.querySelector("body").classList.add("Lawrencium");
+  if (radios[2].checked) Windows[2].classList.remove("Lawrencium");
+  else Windows[2].classList.add("Lawrencium");
   player1Name = textBoxes[0].value;
   document.getElementById("name1").innerText=player1Name;
   if (!singleMode) 

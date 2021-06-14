@@ -6,20 +6,6 @@
   box-sizing: border-box;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to right, #c31432, #240b36) no-repeat center center/cover;
-
-}
-
-.Lawrencium::before
-{
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e) no-repeat center center/cover !important;
-}
-
 #start
 {
   display: flex;
@@ -41,7 +27,7 @@ body::before {
 
 .logo
 {
-  width: 75vw;
+  width: 70vw;
 }
 
 .name:focus, .name
@@ -193,71 +179,48 @@ button:hover {
   color: #0069d9;
 }
 
-#home {
-  position: relative;
+#home
+{
+  min-height: 100vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  height: 100vh;
-  width: 100vw;
-}
-
-
-/* @media only screen and (max-height: 415px) {
-    .players
-    {
-        height: 125px;
-        width: 125px;
-    }
-    #player1 {
-    right: 5px;
-    top: 15px;  
-  }
-  #player2 {
-    right: 5px;
-    bottom: 15px;
-  }
-}
-
-@media only screen and (min-height: 414px) {
-    .players
-    {
-        height: 150px;
-        width: 150px;
-    }
-  #player1 {
-    bottom: 15px;
-    left: calc((75vw - 300px) / 6);
-  }
-
-  #player2 {
-    bottom: 15px;
-    right: calc((75vw - 300px) / 6);
-  }
-} */
-
-.row {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  background: linear-gradient(to right, #c31432, #240b36) no-repeat center center/cover;
+}
+
+.Lawrencium
+{
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e) no-repeat center center/cover !important;
 }
 
 
-#board {
+#board
+{
   border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.08);
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 300px;
 }
 
-.cells {
+.row
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cells
+{
   border: 2px solid white;
   position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.08);
   display: flex;
+  height: 100px;
+  width: 100px;
   justify-content: center ;
   align-items: center;
   cursor: pointer;
@@ -334,11 +297,11 @@ button:hover {
 
 #container
 {
-  width: 80%;
+  height: 200px;
   display: flex;
+  width: 85%;
   justify-content: space-between;
-  align-items: center;
-
+  align-items: flex-end;
 }
 
 .players {
@@ -353,6 +316,8 @@ button:hover {
 {
   position: fixed;
   display: flex;
+  height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   right: 0;
@@ -372,6 +337,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 2rem;
 }
 
