@@ -15,7 +15,7 @@
   </head>
   <body>
     <section id="start">
-      <img src="./logo.png" alt="Tic-Tac-Toe" class="logo" />
+      <img src="./images/logo.png" alt="Tic-Tac-Toe" class="logo" />
       <div id="game_mode">
         <span class="legends"><h4>Game mode:</h4></span>
         <div class="wrapper">
@@ -108,12 +108,15 @@
     <section id="end" class="hide">
       <div class="winning-message" id="winningMessage">
         <div data-winning-message-text>Player 1 Wins!!</div>
-        <button id="restartButton">Restart</button>
+        <div class="buttons">
+          <button id="restartButton">Restart</button>
+          <button id="MenuButton">Go to Menu</button>
+        </div>
       </div>
     </section>
 
     <section id="home" class="hide">
-      <img src="./logo.png" alt="Tic-Tac-Toe" class="logo">
+      <img src="./images/logo.png" alt="Tic-Tac-Toe" class="logo">
       <div id="board">
         <div class="row" id="row1">
           <div class="cells" id="cell1"></div>
@@ -133,12 +136,16 @@
       </div>
       <div id="container">
         <div class="players">
-          <div class="profiles" id="profile1"></div>
-          <p class="names" id="name1">Player1</p>
+          <div class="profiles" id="profile1">
+            <p class="names" id="name1">Player1</p>
+            <p class="scores" id="score1">Score1</p>
+          </div>
         </div>
         <div class="players">
-          <div class="profiles" id="profile2"></div>
-          <p class="names" id="name2">Doge</p>
+          <div class="profiles" id="profile2">
+            <p class="names" id="name2">Doge</p>
+            <p class="scores" id="score2">Score2</p>
+          </div>
         </div>
       </div>
     </section>

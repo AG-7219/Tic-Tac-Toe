@@ -4,11 +4,13 @@ const textBoxes = document.querySelectorAll("input[type=text");
 const turnLabel = document.querySelectorAll("#turn label")[1];
 const startButton = document.querySelector("#Start_button");
 const restartButton = document.querySelector("#restartButton");
+const MenuButton = document.querySelector("#MenuButton");
 const Windows = document.getElementsByTagName("section");
 const cellElements = document.querySelectorAll(".cells");
 const board = document.getElementById("board");
 const winningMessageElement = document.getElementById("winningMessage");
 const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
+const scores = document.querySelectorAll(".scores"); 
 
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
@@ -27,9 +29,13 @@ var singleMode,
   player1Name,
   player2Name = "Doge",
   cur_turn,
-  cur_mark,
   player1,
   player2,
+  score1,
+  score2,
+  WinCells,
+  gameOver=false,
+  firstTurn,
   b = [
       ["_","_","_"],
       ["_","_","_"],
@@ -192,23 +198,24 @@ function isMovesLeft(b)
      return [bestRow,bestCol];
  }
   
-
-
-
 function startGame() {
   cellElements.forEach((cell) => {
     cell.classList.remove("x");
     cell.classList.remove("circle");
+    cell.classList.remove("highlight");
     cell.removeEventListener("click", handleClick);
     cell.addEventListener("click", handleClick, { once: true });
-    for(let i=0; i<3; i++)
-    {
-      for(let j=0; j<3; j++)
-      {
-        b[i][j]="_";
-      }
-    }
   });
+  for(let i=0; i<3; i++)
+  {
+    for(let j=0; j<3; j++)
+    {
+      b[i][j]="_";
+    }
+  }
+  scores[0].innerText="Score : "+ score1;
+  scores[1].innerText="Score : "+ score2;
+  gameOver=false;
   if(singleMode && cur_turn===2)
   {
     let bestMove = findBestMove(b);
@@ -222,6 +229,7 @@ function startGame() {
 
 function handleClick(e) {
   const cell = e.target;
+  if(cell.classList.value.indexOf("circle")!=-1 || cell.classList.value.indexOf("x")!=-1 || gameOver) return ;
   const currentClass = (cur_turn === 1) ? player1 : player2;
   placeMark(cell, currentClass);
   let index;
@@ -277,8 +285,21 @@ function endGame(draw) {
   } else {
     winningMessageTextElement.innerText = `${cur_turn===1 ? player1Name : player2Name} Wins!`;
   }
-  Windows[1].classList.remove("hide");
-  Windows[2].classList.add("hide");
+  gameOver=true;
+  if(!draw)
+  {
+    for(let i=0; i<WinCells.length; i++)
+    {
+      cellElements[WinCells[i]].classList.add("highlight");
+    }
+    if(cur_turn == 1) score1++;
+    else score2++;
+  }
+  setTimeout(()=>{
+    Windows[1].classList.remove("hide");
+    Windows[2].classList.add("hide");
+  },1500);
+  
 }
 
 function isDraw() {
@@ -295,31 +316,35 @@ function placeMark(cell, currentClass) {
 
 function swapTurns() 
 {
-  console.log("fired1");
   if(cur_turn===1) { cur_turn=2; } 
   else { cur_turn=1; }
-  console.log(cur_turn);
 }
 
 function setBoardHoverClass() {
-  console.log(cur_turn);
   board.classList.remove("x");
   board.classList.remove("circle");
   if (cur_turn===1) {
     board.classList.add(player1);
-    console.log("fired2");
   } else {
     board.classList.add(player2);
-    console.log("fired3");
   }
 }
 
 function checkWin(currentClass) {
-  return WINNING_COMBINATIONS.some((combination) => {
-    return combination.every((index) => {
-      return cellElements[index].classList.contains(currentClass);
-    });
-  });
+  for(let i=0; i<WINNING_COMBINATIONS.length; i++)
+  {
+    flag=true;
+    for(let j=0; j<WINNING_COMBINATIONS[i].length; j++)
+    {
+      if(!cellElements[WINNING_COMBINATIONS[i][j]].classList.contains(currentClass)) flag=false;
+    }
+    if(flag)
+    {
+      WinCells = WINNING_COMBINATIONS[i];
+      return true;
+    }
+  }
+  return false;
 }
 
 radios[0].addEventListener("click", () => {
@@ -348,11 +373,11 @@ startButton.addEventListener("click", () => {
     document.getElementById("name2").innerText=player2Name;
   }
   cur_turn = (radios[6].checked) ? 1 : 2;
+  firstTurn = cur_turn;
   player1 = (radios[4].checked) ? "x" : "circle";
   player2 = (player1 === "x") ? "circle" : "x";
-  console.log(player1);
-  console.log(player2);
-  console.log(cur_turn);
+  score1 = 0;
+  score2 = 0; 
   Windows[0].classList.add("hide");
   Windows[2].classList.remove("hide");
   startGame();
@@ -362,9 +387,15 @@ restartButton.addEventListener("click",()=>
 {
     Windows[1].classList.add("hide");
     Windows[2].classList.remove("hide");
+    cur_turn = firstTurn; 
     startGame();
 });
-  
+
+MenuButton.addEventListener("click",()=>
+{
+  Windows[1].classList.add("hide");
+  Windows[0].classList.remove("hide");
+});
  
   
  
