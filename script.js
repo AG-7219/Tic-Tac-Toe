@@ -11,6 +11,9 @@ const board = document.getElementById("board");
 const winningMessageElement = document.getElementById("winningMessage");
 const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
 const scores = document.querySelectorAll(".scores"); 
+const pics = document.querySelectorAll(".pics");
+const lights = document.querySelectorAll(".light");
+const PanelText = document.querySelector("#turn_text");
 
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
@@ -215,6 +218,20 @@ function startGame() {
   }
   scores[0].innerText="Score : "+ score1;
   scores[1].innerText="Score : "+ score2;
+  pics[0].attributes[0].ownerElement.src="./images/default1.jpg";
+  pics[1].attributes[0].ownerElement.src="./images/default2.png";
+  if(cur_turn==1)
+  {
+    lights[1].style.backgroundColor="";
+    lights[0].style.backgroundColor="yellow";
+    PanelText.innerHTML=player1Name+"'s Turn";
+  }
+  else
+  {
+    lights[0].style.backgroundColor="";
+    lights[1].style.backgroundColor="yellow";
+    PanelText.innerHTML=player2Name+"'s Turn";
+  }
   gameOver=false;
   if(singleMode && cur_turn===2)
   {
@@ -288,6 +305,16 @@ function endGame(draw) {
   gameOver=true;
   if(!draw)
   {
+    if(cur_turn==1)
+    {
+      pics[0].attributes[0].ownerElement.src="./images/winning.jpg";
+      pics[1].attributes[0].ownerElement.src="./images/losing.jpg";
+    }
+    else
+    {
+      pics[1].attributes[0].ownerElement.src="./images/winning.jpg";
+      pics[0].attributes[0].ownerElement.src="./images/losing.jpg";
+    }
     for(let i=0; i<WinCells.length; i++)
     {
       cellElements[WinCells[i]].classList.add("highlight");
@@ -316,8 +343,20 @@ function placeMark(cell, currentClass) {
 
 function swapTurns() 
 {
-  if(cur_turn===1) { cur_turn=2; } 
-  else { cur_turn=1; }
+  if(cur_turn===1) 
+  {
+     cur_turn=2; 
+     lights[0].style.backgroundColor="";
+     lights[1].style.backgroundColor="yellow";
+     PanelText.innerHTML=player2Name+"'s Turn";
+  } 
+  else 
+  { 
+    cur_turn=1; 
+    lights[1].style.backgroundColor="";
+    lights[0].style.backgroundColor="yellow";
+    PanelText.innerHTML=player1Name+"'s Turn";
+  }
 }
 
 function setBoardHoverClass() {
@@ -396,8 +435,6 @@ MenuButton.addEventListener("click",()=>
   Windows[1].classList.add("hide");
   Windows[0].classList.remove("hide");
 });
- 
-  
  
   
  
