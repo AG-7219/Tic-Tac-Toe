@@ -406,11 +406,10 @@ startButton.addEventListener("click", () => {
   else Windows[2].classList.add("Lawrencium");
   player1Name = textBoxes[0].value;
   document.getElementById("name1").innerText=player1Name;
-  if (!singleMode) 
-  {
-    player2Name = textBoxes[1].value;
-    document.getElementById("name2").innerText=player2Name;
-  }
+  
+  if (!singleMode) player2Name = textBoxes[1].value;
+  else player2Name = "Doge";
+  document.getElementById("name2").innerText=player2Name;
   cur_turn = (radios[6].checked) ? 1 : 2;
   firstTurn = cur_turn;
   player1 = (radios[4].checked) ? "x" : "circle";
